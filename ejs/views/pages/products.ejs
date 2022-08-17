@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <%- include('../partials/navbar'); %>
+    
+    <h1 class="titulo"><%=title%></h1>
+    <% products.forEach((item)=>{ %>
+      <!-- <div class="container" > -->
+        <table class="table table-dark table-striped">
+        <tr>
+          <th> <p>ID</p> </th>
+          <th> <p>Producto</p> </th>
+          <th> <p>Precio</p> </th>
+          <th> <p>Imagen</p> </th>
+        </tr>
+        <tr>
+          <td> <p><%=item.id%></p> </td>
+          <td> <p><%=item.title%></p> </td>
+          <td> <p>$<%=item.price%></p> </td>
+          <td class="table-img"><img class="product-img" src="<%=item.thumbnail %>"/></td>
+        </tr>
+        
+        <!-- <p> ID: <%=item.id%><br/> </p>
+        <p> Producto: <%=item.title%> </p>
+        <p> Precio: <%=item.price%> </p>
+        <img class="product-img" src="<%=item.thumbnail %>"/> -->
+      </table>
+      <!-- </div> -->
+      <% }) %>
+      <button class=" boton btn btn-info" ><a href="/form"<a/> Agregar producto nuevo</button>
+      
+    <%- include('../partials/footer'); %> \
+
+  
+  </body>
+</html>

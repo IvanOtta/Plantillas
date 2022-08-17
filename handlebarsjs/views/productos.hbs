@@ -1,0 +1,14 @@
+{{>navbar}}
+
+<h1>{{title}}</h1>
+
+{{#each productos}}
+    <div>
+        <p>{{this.id}}</p>
+        <h1>{{this.title}}</h1>
+        <img class="img" src="{{this.thumbnail}}">
+        <h2>{{this.price}}</h2>
+    </div>
+{{/each}}
+{{>footer}}
+

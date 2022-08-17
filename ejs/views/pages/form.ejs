@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <%- include('../partials/navbar'); %>
+    <%=title%>
+
+    <form method="post" action="/products">
+      <fieldset>
+        <legend>Productos</legend>
+        <input type="text" placeholder="Ingresa nombre" name="title" id="title">
+        <input type="text" placeholder="Ingresa precio" name="price" id="price">
+        <input type="text" placeholder="Ingresa URL de imagen" name="thumbnail" id="thumbnail">
+        <input type="submit" value="Enviar">
+      </fieldset>
+    </form>
+
+    <button> <a href="/products"</a> Ver los productos </button>
+        
+  
+    <%- include('../partials/footer'); %> 
+  </body>
+</html>
