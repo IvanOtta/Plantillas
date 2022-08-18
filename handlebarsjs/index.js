@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const { urlencoded, json } = require('express')
 const { engine } = require('express-handlebars');
 const PORT = 8080;
 
@@ -9,7 +10,8 @@ const server = app.listen(PORT, () => {
 
 server.on('error', (error) => console.log(`Error en servidor ${error}`));
 app.use('/public', express.static(__dirname + '/public'));
-
+app.use(express.json())
+app.use(urlencoded({extended: true}))
 // CONFIGURACION DEL MOTOR HANDLEBARS
 
 app.set('view engine', 'hbs');
@@ -89,8 +91,15 @@ app.get('/form', (req,res) => {
   res.render('form', {title: "Agrega un nuevo producto"})
 })
 
-app.post('/productos', (req,res) => {
+app.post('/productos', (req, res) => {
   const {body} = req
-  console.log(body)
-  res.redirect(302, '/productos')
+  let lastProd = productsArg[productsArg.length - 1]
+  if(body) {
+    body.id = lastProd.id + 1
+  }
+  
+
+
+  productsArg.push(body)
+  res.redirect(301, '/productos')
 })

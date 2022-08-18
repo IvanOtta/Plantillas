@@ -3,12 +3,21 @@
 <h1>{{title}}</h1>
 
 {{#each productos}}
-    <div>
-        <p>{{this.id}}</p>
-        <h1>{{this.title}}</h1>
-        <img class="img" src="{{this.thumbnail}}">
-        <h2>{{this.price}}</h2>
-    </div>
+    <table class="table table-dark table-striped">
+            <tr>
+                <th> <p>ID</p> </th>
+                <th> <p>Producto</p> </th>
+                <th> <p>Precio</p> </th>
+                <th> <p>Imagen</p> </th>
+            </tr>
+            <tr>
+                <td> <p>{{this.id}}</p> </td>
+                <td> <p> {{this.title}} </p> </td>
+                <td> <p> {{this.price}} </p> </td>
+                <td class="table-img"><img class="product-img" src="{{this.thumbnail}}"/></td>
+            </tr>
+      </table>
 {{/each}}
-{{>footer}}
+
+<button class="btn btn-primary"> <a class="" href="/form">Agrega un producto nuevo </a></button>
 

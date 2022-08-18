@@ -1,22 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>Document</title>
-</head>
-<body>
-<h1>{{title}}</h1>
-    
-<form method='post' action='/productos'>
+  </head>
+  <body>
+    <h1 class="d-flex justify-content-center text-info" >{{title}}</h1>
+    <div class="formulario">
+      <form method='post' action='/productos'>
 
-  <input type='text' placeholder='Ingresa nombre' name='name' id='name' />
-  <input type='text' placeholder='Ingresa precio' name='price' id='price' />
-  <input type='text' placeholder='Ingresa la imagen' name='thumbnail' id='thumbnail' />
-  <input type='submit' value='Cargar'/>
+        <input type='text' placeholder='Ingresa nombre' name='name' id='name' />
+        <input type='text' placeholder='Ingresa precio' name='price' id='price' />
+        <input type='text' placeholder='Ingresa la imagen' name='thumbnail' id='thumbnail' />
+        <input class="btn btn-success" type='submit' value='Cargar' />
 
-</form>
-</body>
+      </form>
+    </div>
+
+    <button class='btn btn-primary'><a href='/productos'>Ver los productos</a></button>
+  </body>
 </html>
-
